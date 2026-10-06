@@ -1,5 +1,1 @@
-{
-  "name": "tesla-oauth-relay",
-  "version": "1.0.0",
-  "private": true
-}
+{"name":"tesla-oauth-relay","version":"2.0.0","private":true,"type":"module","scripts":{"test":"node --test"},"engines":{"node":">=22"}}

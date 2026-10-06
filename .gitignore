@@ -1,0 +1,6 @@
+.env*
+!.env.example
+node_modules/
+.vercel/
+*.private.pem
+private-key.pem
