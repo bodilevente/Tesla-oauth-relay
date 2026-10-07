@@ -11,3 +11,5 @@ el('vehicles').onclick=()=>run(async()=>{const r=await api('vehicles',{});el('ve
 el('state').onclick=()=>run(async()=>{if(!el('vehicle').value){message('Előbb kérd le az autóidat.');return;}message('Állapot lekérése…');const r=await api('state',{vin:el('vehicle').value});el('data').textContent=JSON.stringify(r,null,2);message(r.liveDataAvailable?'Állapot és elérhető helyadatok lekérve.':'Az autó nem online. A Tesla appban felébreszthető.');});
 el('logout').onclick=()=>run(async()=>{await api('logout',{});el('data').textContent='';el('vehicle').replaceChildren();await config();});
 run(async()=>{await config();const error=new URLSearchParams(location.search).get('error');if(error)message(error);history.replaceState(null,'','/');});
+
+el('bridge-connect').onclick=()=>run(async()=>{const r=await api('connect',{bridge:true});location.assign(r.url);});
